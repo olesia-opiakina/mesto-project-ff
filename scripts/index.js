@@ -1,10 +1,7 @@
-// @todo: Темплейт карточки
 const template = document.querySelector("#card-template").content;
 
-// @todo: DOM узлы
 const cardList = document.querySelector(".places__list");
 
-// @todo: Функция создания карточки
 function createCard(card, deleteCallback) {
   const cardElement = template.querySelector(".places__item").cloneNode(true);
   cardElement.querySelector(".card__title").textContent = card.name;
@@ -14,14 +11,11 @@ function createCard(card, deleteCallback) {
     .addEventListener("click", deleteCallback);
   return cardElement;
 }
-// @todo: Функция удаления карточки
 
 function deleteCard(event) {
   const cardElement = event.target.closest(".places__item");
   cardElement.remove();
 }
-
-// @todo: Вывести карточки на страницу
 
 initialCards.forEach(function (item) {
   const newCard = createCard(item, deleteCard);
