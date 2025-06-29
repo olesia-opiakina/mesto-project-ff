@@ -12,9 +12,10 @@ export function createCard(card, deleteCallback, handleCardLike, openImage) {
   cardElement
     .querySelector(".card__delete-button")
     .addEventListener("click", deleteCallback);
-  cardElement
-    .querySelector(".card__like-button")
-    .addEventListener("click", handleCardLike);
+  const likeButton = cardElement.querySelector(".card__like-button");
+  likeButton.addEventListener("click", function () {
+    handleCardLike(likeButton);
+  });
   return cardElement;
 }
 
@@ -23,6 +24,6 @@ export function deleteCard(event) {
   cardElement.remove();
 }
 
-export function handleCardLike(event) {
-  event.currentTarget.classList.toggle("card__like-button_is-active");
+export function handleCardLike(likeButton) {
+  likeButton.classList.toggle("card__like-button_is-active");
 }

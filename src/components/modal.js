@@ -18,6 +18,7 @@ function handleEscapeKey(event) {
 }
 
 export function handleOverlay(event) {
+  console.log(event);
   if (event.target === event.currentTarget) {
     const modalPopup = document.querySelector(".popup_is-opened");
     closeModal(modalPopup);
