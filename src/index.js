@@ -125,7 +125,6 @@ function addNewCard(event) {
       cardList.prepend(cardElement);
       closeModal(addPopup);
       event.target.reset();
-      clearValidation(addForm, validationConfig);
     })
     .catch((err) => {
       console.log(err);

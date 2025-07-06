@@ -20,7 +20,7 @@ const hideInputError = (formElement, inputElement, validationConfig) => {
 const isValid = (formElement, inputElement, validationConfig) => {
   if (inputElement.validity.patternMismatch) {
     inputElement.setCustomValidity(
-      "Разрешены только латинские и кириллические буквы, знаки дефиса и пробелы."
+      inputElement.dataset.errorMessage || "error"
     );
   } else {
     inputElement.setCustomValidity("");
