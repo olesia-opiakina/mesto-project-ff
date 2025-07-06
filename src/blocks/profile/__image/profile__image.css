@@ -1,4 +1,5 @@
 .profile__image {
+  position: relative;
   width: 120px;
   height: 120px;
   -webkit-border-radius: 50%;
@@ -7,6 +8,31 @@
   background-size: cover;
   background-position: center;
   margin: 0 29px 0 0;
+  cursor: pointer;
+}
+
+.avatar__overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.avatar__icon {
+  width: 26px;
+  height: 26px;
+}
+
+.profile__image:hover .avatar__overlay {
+  opacity: 1;
 }
 
 @media screen and (max-width: 740px) {
