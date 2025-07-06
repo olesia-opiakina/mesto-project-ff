@@ -20,7 +20,6 @@ export function createCard(
 
   const deleteButton = cardElement.querySelector(".card__delete-button");
   if (cardData.owner._id === currentUserId) {
-    // deleteButton.addEventListener("click", deleteCallback);
     deleteButton.addEventListener("click", () => {
       handleDeleteClick(cardData._id, cardElement);
     });
@@ -37,11 +36,6 @@ export function createCard(
     handleCardLike(likeButton, cardData, likeNumber);
   });
   return cardElement;
-}
-
-export function deleteCard(event) {
-  const cardElement = event.target.closest(".places__item");
-  cardElement.remove();
 }
 
 export function handleCardLike(likeButton, cardData, likeNumber) {

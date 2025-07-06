@@ -1,4 +1,3 @@
-// Добавляет класс с ошибкой
 const showInputError = (
   formElement,
   inputElement,
@@ -11,7 +10,6 @@ const showInputError = (
   errorElement.classList.add(validationConfig.errorClass);
 };
 
-// Удаляет класс с ошибкой
 const hideInputError = (formElement, inputElement, validationConfig) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(validationConfig.inputErrorClass);
@@ -19,7 +17,6 @@ const hideInputError = (formElement, inputElement, validationConfig) => {
   errorElement.textContent = "";
 };
 
-// Функция проверяющая валидность инпута
 const isValid = (formElement, inputElement, validationConfig) => {
   if (inputElement.validity.patternMismatch) {
     inputElement.setCustomValidity(

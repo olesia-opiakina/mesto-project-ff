@@ -4,10 +4,6 @@ const config = {
     authorization: "dc82f7b3-b122-4f5c-b918-d49d468cd081",
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({
-    name: "Marie Skłodowska Curie",
-    about: "Physicist and Chemist",
-  }),
 };
 
 export const getInitialCards = () => {
@@ -17,7 +13,6 @@ export const getInitialCards = () => {
     if (res.ok) {
       return res.json();
     }
-    // если ошибка, отклоняем промис
     return Promise.reject(`Ошибка: ${res.status}`);
   });
 };
